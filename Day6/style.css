@@ -1,0 +1,195 @@
+*{
+--bright-std:0.8;
+--bright-thunder:8;
+--blur-bkg:5;
+font-family: 'Creepster', cursive;
+}
+text {
+  fill: #5f5;
+  font-size: 30px;
+  opacity:0;
+}
+.parallax-container, h1 { 
+  position: absolute; 
+  top: 0vh;
+  left: 0vw;
+  margin: 0;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  width:100vw;
+  height:100vh;
+}
+
+.parallax-base {
+  transform-style: preserve-3d;
+  width:100vw;
+  height:100vh;
+  margin: 0;
+}
+
+
+
+#tree, #tree_2, .lines {
+  stroke: #000;
+  stroke-width: 1px;
+}
+body {
+  background:#000;
+}
+svg {
+position:absolute;
+width:100vw;
+height:100vh;
+}
+
+.parallax-base div {
+  opacity: .7;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+svg#background {
+  transform: translateZ(0px) scaleX(1.2);
+  filter:blur( calc( var(--blur-bkg) * 1px ) )  brightness(var(--bright-std)) ;
+}
+
+div#bat {
+  transform: translateZ(160px);
+  transform: translateZ(500px) translateY(300px) rotateZ(0deg) scale(0.001);
+  animation: bat 13s infinite ease-out;
+  animation-delay: -8s;
+}
+@keyframes bat {
+  70% {transform: translateZ(160px) translateY(300px) rotateZ(0deg) scale(0.001);}
+  100% {transform: translateZ(500px) translateY(-150px) rotateZ(-10deg) scale(0.3);}
+}
+
+svg#wing_l {
+  transform-origin:45% 60%;
+  transform:  rotate(0deg);
+  animation: wingl .3s infinite alternate ease-in-out;
+  fill:#666;
+}
+ @keyframes wingl {
+  from { transform:  rotate(40deg); }
+  to  { transform:  rotate(-40deg); }
+}
+svg#wing_r {
+  fill:#666;
+transform-origin:52% 65%;
+   transform:  rotate(0deg);
+  animation: wingr .3s infinite alternate ease-in-out;
+}
+ @keyframes wingr {
+  from { transform:  rotate(-40deg); }
+  to  { transform:  rotate(40deg); }
+}
+
+svg#svghand {
+  transform: translateZ(80px) scale(1);
+  animation: hand 13s infinite; 
+  transform-origin: 40% 90%;
+}
+@keyframes hand {
+  10% {transform: translateZ(80px) translateY(-20px) scale(.85) rotate(0deg) ;}
+  30% {transform: translateZ(80px) translateY(-5px) scale(.85) rotate(5deg) ;}
+  60% {transform: translateZ(80px) translateY(10px) scale(.85) rotate(-5deg) ;}
+  100% {transform: translateZ(80px) translateY(0px) scale(.85) rotate(0deg) ;}
+}
+svg#grave {
+  transform-origin: 30% 90%;
+  transform: translateZ(120px) translateY(-40px) rotate(0deg) scale(.85);
+  animation: grave 7s infinite;
+  filter:blur(2px);
+}
+
+
+svg#ghost {
+  -webkit-filter: url("#disfilter");
+  filter: url("#disfilter") blur(3px);
+  transform-origin: 60% 70%;
+  transform: translateZ(130px) translateY(150px) translateX(700px) scale(.55) rotate(0deg);
+  animation: ghost 25s infinite linear; 
+  animation-delay: -19s;
+}
+@keyframes ghost {
+  0% { opacity: 0; }
+  79.5% { opacity: 0; }
+  80% {transform: translateZ(130px) translateY(150px) translateX(700px) scale(.55);
+  opacity: 1;}
+  85% {transform: translateZ(150px) translateY(110px) translateX(200px) scale(.65) rotate(5deg);}
+  90% {transform: translateZ(130px) translateY(110px) translateX(-100px) scale(.65) rotate(5deg);}
+  99.5% {transform: translateZ(130px) translateY(170px) translateX(-500px) scale(.65) rotate(-5deg);
+  opacity: 1;}
+    100% {transform: translateZ(130px) translateY(170px) translateX(-700px) scale(.65);
+   opacity: 0; }
+}
+
+
+svg#graves {
+  transform: translateZ(140px) scale(.85);
+}
+svg#foreground { 
+  transform: translateZ(220px) scale(.85);
+}
+svg#pu { 
+  transform: translateZ(220px) translateY(30px) scale(.85);
+}
+svg#lid { 
+  transform: translateZ(220px) scale(.85);
+  animation: lid 5s infinite;
+}
+@keyframes lid {
+  0% {transform: translateY(-15px)  translateZ(220px) scale(.85);} 
+  80% {transform: translateY(-15px) translateZ(220px) scale(.85);} 
+  85% {transform: translateY(0px) translateZ(220px) scale(.85);} 
+  90% {transform: translateY(-15px) translateZ(220px) scale(.85);} 
+  100% {transform: translateY(-15px) translateZ(220px) scale(.85);}
+}
+svg#flash_1, svg#flash_2 { 
+  opacity:0;
+  transform: translateZ(20px) scaleX(.8)      scaleY(1.2);
+}
+.stones {
+  fill: #000;
+}
+
+#pumkin_light {
+  animation: colorchange 0.2s infinite alternate;
+}
+@keyframes colorchange {
+  to { fill:#ff3300; }
+}
+
+
+@keyframes grave {
+  10% {transform: translateZ(120px) translateY(-40px) rotate(0deg) scale(.85);}
+  11% {transform: translateZ(120px) translateY(-40px) rotate(-.5deg) scale(.85);}
+  12% {transform: translateZ(120px) translateY(-40px) rotate(.5deg) scale(.85);}
+  13% {transform: translateZ(120px) translateY(-40px) rotate(-.5deg) scale(.85);}
+  14% {transform: translateZ(120px) translateY(-40px) rotate(.5deg) scale(.85);}
+  15% {transform: translateZ(120px) translateY(-40px) rotate(0deg) scale(.85);}
+  100% {transform: translateZ(120px) translateY(-40px) rotate(0deg) scale(.85);}
+}
+
+
+#owleyes {
+  animation: eyemove 2s infinite alternate;
+}
+@keyframes eyemove {
+  0% {transform: translateX(-1.2px);} 
+  80% {transform: translateX(-1.2px);} 
+  100% {transform: translateX(1.3px);}
+}
+
+#co {
+  color: #fff;
+  position: absolute;
+  right:10px;
+  bottom:10px;
+  transform: translateZ(240px);
+}
+#gravestone_1 {
+  filter: blur(2px);
+}

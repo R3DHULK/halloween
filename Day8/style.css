@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+/* Animations */
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes eyes {
+    0% {
+        margin-top: 10px;
+    } 
+    100% {
+        border-bottom-color: yellow;
+        box-shadow: 0 10px 200px orange;
+        margin-top: 0;
+    } 
+}
+
+@keyframes mouth {
+    0% {
+        height: 50px;
+    }
+    100% {
+        height: 80px;
+        background-color: yellow;
+        box-shadow: inset 0 0 40px orangered; 
+    }
+}
+
+@keyframes letter {
+    0% {
+        letter-spacing: 0;
+    }
+    100% {
+        letter-spacing: 10px;
+    }
+}
+
+@keyframes face {
+    0% {
+        margin: 0 40px
+    }
+    100% {
+        margin: -20px 40px;
+    }
+}
+
+
+body {
+    background-color: #030319;
+}
+
+.title {
+    margin: 0;
+    text-align: center;
+    color: orangered;
+    font-size: 80px;
+    font-family: 'Bungee', cursive;
+    animation: letter 1s infinite alternate;
+}
+
+.title span {
+    display: block;
+    font-size: 0.7em;
+    color: orange;
+    text-shadow: 0 5px #964527;
+}
+
+.lantern {
+    animation: zoom 1s infinite alternate;
+    width: 330px;
+    height: 280px;
+    background-color: orangered;
+    margin: 140px auto 30px;
+    border-width: 0 30px;
+    border-style: solid;
+    border-color: #ff6830;
+    border-radius: 100px;
+    position: relative;
+}
+
+.lantern:before,
+.lantern:after {
+    content: ''; 
+    width: 52px;
+    top: 0;
+    bottom: 0;
+    background-color: #000;
+    position: absolute;
+    left: -100px;
+    top: 0;
+    margin: 20px 0;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 2000px;
+    border-width: 0 0 0 20px;
+    border-color: #222;
+    border-style: solid;
+    animation: git 1s infinite alternate;
+}
+
+.lantern:after {
+    left: auto;
+    right: -100px;
+    transform: rotateY(180deg);
+}
+
+.face {
+    position: absolute;
+    border-width: 0 30px 0;
+    border-style: solid;
+    border-color: #ff6830;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: -10px 40px;
+    animation: face 1s infinite alternate;
+    background-color: orangered;
+    border-radius: 70px;
+}
+
+.face:before {
+    content: '';
+    width: 30px;
+    height: 60px;
+    background-color: forestgreen;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: -70px auto 0;
+    top: 0;
+    border-width: 0 10px 20px 10px;
+    border-style: solid;
+    border-color: darkgreen darkgreen #0a330a;
+    border-radius: 10px;
+}
+
+.eyes {
+    text-align: center;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-indent: -65px;
+    animation: eyes 1s infinite alternate;
+}
+
+.eyes:before,
+.eyes:after {
+    animation: eyes 1s infinite alternate;
+    content: '';
+    display: inline-block;
+    width: 0;
+    border-top-left-radius: 100%;
+    height: 0;
+    border-width: 60px;
+    border-style: solid;
+    margin: 20px;
+    border-color: transparent transparent #222 transparent;
+    border-radius: 100%;
+}
+
+
+.mouth {
+    background-color: #222;
+    height: 40px;
+    border-top: 15px dashed orangered;
+    border-bottom: 10px dotted orangered;
+    border-radius: 0px;
+    animation: mouth 1s infinite alternate;
+}

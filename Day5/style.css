@@ -1,0 +1,42 @@
+body {
+  background:#000;
+  overflow: hidden;
+ text-align:center;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+svg{
+  width:100%;
+  height:100%;
+  visibility:hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+ 
+}
+.hallowText {
+   font-family: 'Creepster', cursive;
+  text-anchor:middle;
+  letter-spacing:2px;
+   fill:#E48D29;
+}
+ .topText{
+  font-size:105px;
+}
+.botText{
+  font-size:100px;
+}
+/* #D97624 */
+.backgroundGradient{
+ stop-color:#35409C;
+ stop-color:#AE0000;
+ stop-color:#C410B1;
+ /* stop-color:#89B405; */
+}
